@@ -23,8 +23,8 @@ app.use(
     mysql,
     {
       host: "aws.connect.psdb.cloud",
-      user: "g3750e6hvcqgdgr1e9qv",
-      password: "pscale_pw_hN3fRUiW0rkdgexs7nOAlQe4sgchLWSQqnVnLMh1PtN",
+      user: "xr4idawojgxwobdd9zzs",
+      password: "pscale_pw_19CxTejhE9GB6olyNBVTFHlXZtClFg0oZ9OTXtE7EQi",
       port: 3306,
       database: "gestion",
       ssl: true,
