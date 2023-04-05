@@ -1,2 +1,2 @@
-# gestionMantenimientoClinica
-Aplicación web diseñada para ayudar en el seguimiento y gestión de las reparaciones y mantenimientos necesarios dentro de una clínica médica.
+# Gestion de Mantenimientos Clinica Central
+Aplicación web diseñada para ayudar en el seguimiento y gestión de las reparaciones y mantenimientos necesarios dentro de una clínica médica. La aplicación permite a los usuarios registrar solicitudes de mantenimiento, asignar trabajadores para realizar las reparaciones y generar informes de mantenimiento una vez que se han completado las tareas. Además, también proporciona una interfaz para que los usuarios vean estadísticas e indicadores sobre las reparaciones realizadas, como el número de reparaciones completadas y las que quedan pendientes. En resumen, la aplicación ayuda a mejorar la eficiencia y la gestión del mantenimiento de equipos médicos y otros elementos necesarios para el funcionamiento de una clínica.
