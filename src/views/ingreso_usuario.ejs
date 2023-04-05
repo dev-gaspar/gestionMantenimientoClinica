@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ingreso</title>
+    <link rel="stylesheet" type="text/css" href="estilos/estilos.css" />
+  </head>
+  <body>
+    <% if(notificacion !== "") { %>
+    <div class="notification-container">
+      <div class="notification">
+        <p class="notification-message"><%= notificacion%></p>
+      </div>
+    </div>
+    <% } %>
+
+    <div class="contenedor">
+      <h1 class="text-center">
+        Sistema de reporte de mantenimiento Clínica Central
+      </h1>
+      <div class="center-form">
+        <form action="/oauth" method="post" class="form-group border-form">
+          <h2>Ingreso al sistema</h2>
+          <label for="cedula" class="control-label">Cedula:</label>
+          <input
+            type="text"
+            id="cedula"
+            name="cedula"
+            class="form-control"
+          /><br /><br />
+          <label for="contrasena" class="control-label">Contraseña:</label>
+          <input
+            type="text"
+            id="contrasena"
+            name="contrasena"
+            class="form-control"
+            data-password="true"
+            autocomplete="off"
+          />
+          <br />
+          <span style="font-size: small"
+            >No tienes una cuenta? Registrate
+            <a href="/registrar">aqui!</a></span
+          >
+          <br />
+          <button
+            style="display: inline-block; text-decoration: none"
+            type="submit"
+            class="btn"
+          >
+            Ingresar
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registro</title>
+    <link rel="stylesheet" type="text/css" href="estilos/estilos.css" />
+    <link rel="stylesheet" type="text/css" href="icons/css/all.css" />
+  </head>
+  <body>
+    <% if(user !== undefined) { %>
+    <nav>
+      <ul>
+        <li>
+          <a href="javascript:history.back()">
+            <i class="fa fa-chevron-left"></i> Volver</a
+          >
+        </li>
+        <li>
+          <a href="/"> <i class="fa fa-home"></i> Inicio</a>
+        </li>
+        <li>
+          <a href="/asignaciones"> <i class="fa fa-ticket"></i> Asignaciones</a>
+        </li>
+        <li>
+          <a href="/mantenimientos"
+            ><i class="fa fa-wrench"></i> Mantenimientos</a
+          >
+        </li>
+        <% if(user.rol === "admin") { %>
+        <li>
+          <a href="/administracion">
+            <i class="fa fa-tachometer"></i> administracion</a
+          >
+        </li>
+        <% } %>
+        <li>
+          <a href="/logout"><i class="fa fa-right-from-bracket"></i> Salir</a>
+        </li>
+      </ul>
+    </nav>
+    <% } %>
+    <h1 class="text-center">
+      Sistema de reporte de mantenimiento Clínica Central
+    </h1>
+    <div class="center-form">
+      <form action="/registrar" method="post" class="form-group border-form">
+        <h2>Registro general del usuario</h2>
+        <label for="nombre" class="control-label">Nombre:</label>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          class="form-control"
+          required="true"
+        /><br /><br />
+        <label for="cedula" class="control-label">N° Cedula:</label>
+        <input
+          type="text"
+          id="cedula"
+          name="cedula"
+          class="form-control"
+          required="true"
+        /><br /><br />
+        <label for="cargo" class="control-label">Cargo:</label>
+        <input
+          type="text"
+          id="cargo"
+          name="cargo"
+          class="form-control"
+          required="true"
+        /><br /><br />
+        <label for="area" class="control-label">Area:</label>
+        <input
+          type="text"
+          id="area"
+          name="area"
+          class="form-control"
+          required="true"
+        /><br /><br />
+        <label for="contrasena" class="control-label">Contraseña:</label>
+        <input
+          type="text"
+          id="contrasena"
+          name="contrasena"
+          class="form-control"
+          required="true"
+          data-password="true"
+          autocomplete="off"
+        /><br /><br />
+        <label for="rol" class="control-label">Rol:</label>
+        <select id="rol" name="rol" class="form-control">
+          <option value="user">Usuario</option>
+          <% if(data === "admin") { %>
+          <option value="admin">Administrador</option>
+          <option value="Soporte Tecnico">Soporte Tecnico</option>
+          <% } %>
+        </select>
+        <br /><br />
+        <input type="submit" value="Registrar" class="btn" />
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Asignacion</title>
+    <link rel="stylesheet" type="text/css" href="estilos/estilos.css" />
+    <link rel="stylesheet" type="text/css" href="icons/css/all.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>
+          <a href="javascript:history.back()">
+            <i class="fa fa-chevron-left"></i> Volver</a
+          >
+        </li>
+        <li>
+          <a href="/"> <i class="fa fa-home"></i> Inicio</a>
+        </li>
+        <li>
+          <a href="/asignaciones"> <i class="fa fa-ticket"></i> Asignaciones</a>
+        </li>
+        <li>
+          <a href="/mantenimientos"
+            ><i class="fa fa-wrench"></i> Mantenimientos</a
+          >
+        </li>
+        <% if(user.rol === "admin") { %>
+        <li>
+          <a href="/administracion">
+            <i class="fa fa-tachometer"></i> administracion</a
+          >
+        </li>
+        <% } %>
+        <li>
+          <a href="/logout"><i class="fa fa-right-from-bracket"></i> Salir</a>
+        </li>
+      </ul>
+    </nav>
+    <h1 class="text-center">
+      Sistema de reporte de mantenimiento Clínica Central
+    </h1>
+    <div class="center-form">
+      <div class="form-group border-form">
+        <h2>Asignación de trabajos</h2>
+        <table>
+          <tr>
+            <th>Código ID</th>
+            <th>Nombre del equipo</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Serie</th>
+            <th>Ubicacion</th>
+            <th>Daño reportado</th>
+            <th>Trabajador asignado</th>
+            <th>Fecha</th>
+          </tr>
+          <% for (let mantenimiento of data) { %>
+          <tr class="row-shadow">
+            <td style="background-color: #9fc5f8"><%= mantenimiento.id %></td>
+            <td><%= mantenimiento.nombre %></td>
+            <td><%= mantenimiento.marca %></td>
+            <td><%= mantenimiento.modelo %></td>
+            <td><%= mantenimiento.serie %></td>
+            <td><%= mantenimiento.area %></td>
+            <td><%= mantenimiento.danio %></td>
+            <td><%= trabajadores[mantenimiento.id_trabajador] %></td>
+            <td><%= mantenimiento.fecha %></td>
+          </tr>
+          <% } %>
+        </table>
+        <br />
+        <form action="/asignar" method="post">
+          <label for="id_trabajador" class="control-label"
+            >Soporte Tecnico:</label
+          >
+          <select id="id_trabajador" name="id_trabajador" class="form-control">
+            <% for (let trabajador in trabajadores) { %>
+            <option value="<%= trabajador %>">
+              <%= trabajador %> - <%= trabajadores[trabajador] %>
+            </option>
+            <% } %>
+          </select>
+          <label for="id" class="control-label">Código ID:</label>
+          <select id="id" name="id" class="form-control">
+            <% for (let mantenimiento of data) { %>
+            <option value="<%= mantenimiento.id %>">
+              <%= mantenimiento.id %> - <%= mantenimiento.nombre %>
+            </option>
+            <% } %>
+          </select>
+          <button class="btn" type="submit">Guardar</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

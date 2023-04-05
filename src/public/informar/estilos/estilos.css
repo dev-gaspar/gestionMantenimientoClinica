@@ -1,0 +1,188 @@
+body {
+  font-family: Comic Sans MS;
+}
+
+/*Formularios*/
+.contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  flex-direction: column;
+}
+
+.text-center {
+  text-align: center;
+  color: #024f92;
+}
+
+.center-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.border-form {
+  border: 2px solid #024f92;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.form-group {
+  text-align: center;
+  background: #9fc5f8;
+}
+
+.form-control {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 4px;
+}
+.control-label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.btn {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 4px 10px;
+  margin: 8px 0;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 4px;
+  cursor: pointer;
+  width: 50%;
+  box-shadow: 3px 3px 0px #000;
+  transition: 0.2s;
+  text-decoration: none;
+  font-size: small;
+}
+
+.absolute {
+  position: absolute;
+  top: 0;
+  left: 8px;
+  width: auto;
+}
+
+.btn:hover {
+  background-color: #024f92;
+  color: rgb(255, 255, 255);
+}
+
+/**Tabla**/
+table {
+  border-collapse: collapse;
+  border-spacing: 10px;
+  background-color: #ffffff;
+}
+th,
+td {
+  border: 1px solid black;
+}
+th {
+  background-color: #9fc5f8;
+}
+.row-shadow {
+  box-shadow: 2px 2px 3px #000000;
+}
+tr {
+  border-radius: 5px;
+  padding-bottom: 10px;
+}
+
+a {
+  color: black;
+}
+
+/*Informe*/
+/* Define la estructura del formulario utilizando flexbox */
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Define el tamaño y alineación de los contenedores */
+.form-section {
+  flex: 1;
+  width: 50%;
+  padding: 10px;
+}
+/* Define el tamaño y alineación del formulario de actividades realizadas */
+.activity-form {
+  width: 100%;
+  margin-top: 10px;
+}
+/* Define el tamaño y alineación del formulario de repuestos y accesorios */
+.parts-form {
+  width: 100%;
+  margin-top: 10px;
+}
+/* Define el tamaño y alineación de las cajas de texto */
+input[type="text"],
+input[type="date"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+/*Estilos para ventana de mantenimientos - barra de busqueda*/
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 33%;
+}
+
+.search-container input {
+  border: 1px solid #ccc;
+
+  padding: 0.5em;
+  font-size: 1em;
+  border-radius: 5px 0 0 5px;
+}
+
+.search-container button {
+  background-color: #024f92;
+  color: white;
+  padding: 0.5em;
+  font-size: 1em;
+  border: none;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+}
+
+/*Notificacion*/
+.notification-container {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 9999;
+}
+
+.notification {
+  background-color: #333;
+  color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  animation: show-notification 0.5s ease-in-out;
+}
+
+.notification-message {
+  margin: 0;
+}
+
+@keyframes show-notification {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}

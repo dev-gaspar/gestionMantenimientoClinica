@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Generar informe</title>
+    <link rel="stylesheet" type="text/css" href="estilos/estilos.css" />
+  </head>
+  <body>
+    <a class="btn btn-small" href="javascript:history.back()"> < Volver</a>
+    <h1 class="text-center">Informe de solicitud de mantenimiento</h1>
+    <div class="center-form">
+      <div class="form-group border-form" style="width: 980px">
+        <div class="form-container">
+          <div class="form-section">
+            <label for="fecha">Fecha:</label>
+            <input
+              type="date"
+              id="fecha"
+              name="fecha"
+              readonly
+              value="<%= data.fecha %>"
+            />
+            <label for="equipment-name">Nombre del equipo:</label>
+            <input
+              type="text"
+              id="equipment-name"
+              name="equipment-name"
+              readonly
+              value="<%= data.nombre %>"
+            />
+            <label for="model">Modelo:</label>
+            <input
+              type="text"
+              id="model"
+              name="model"
+              readonly
+              value="<%= data.modelo %>"
+            />
+            <label for="inventory">Inventario:</label>
+            <input
+              type="text"
+              id="inventory"
+              name="inventory"
+              readonly
+              value="<%= data.nro_inventario %>"
+            />
+          </div>
+          <div class="form-section">
+            <label for="brand">Marca:</label>
+            <input
+              type="text"
+              id="brand"
+              name="brand"
+              readonly
+              value="<%= data.marca %>"
+            />
+            <label for="series">Serie:</label>
+            <input
+              type="text"
+              id="series"
+              name="series"
+              readonly
+              value="<%= data.serie %>"
+            />
+            <label for="area">Área:</label>
+            <input
+              type="text"
+              id="area"
+              name="area"
+              readonly
+              value="<%= data.area %>"
+            />
+            <label for="service-type">Servicio solicitado:</label>
+            <input
+              type="text"
+              id="area"
+              name="area"
+              readonly
+              value="<%= data.servicio_solicitado %>"
+            />
+          </div>
+          <div class="activity-form">
+            <label for="damage" class="control-label">Daño:</label>
+            <input
+              type="text"
+              id="area"
+              name="area"
+              readonly
+              value="<%= data.danio %>"
+            />
+          </div>
+        </div>
+
+        <form action="/informar/<%= data.id %>" method="post">
+          <div class="form-container">
+            <div class="activity-form">
+              <h3>Descripción de las actividades realizadas</h3>
+              <table style="width: 100%">
+                <tr>
+                  <th>Actividad</th>
+                  <th>Efectuado</th>
+                  <th>Pasó</th>
+                </tr>
+                <tr>
+                  <td>Prueba inicial (antes de efectuar el mantenimiento)</td>
+                  <td>
+                    <select
+                      id="prueba_inicial_efectuado"
+                      name="prueba_inicial_efectuado"
+                    >
+                      <option value="N/A" selected>N/A</option>
+                      <option value="Si">Si</option>
+                      <option value="No">No</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select id="prueba_incial_paso" name="prueba_incial_paso">
+                      <option value="N/A" selected>N/A</option>
+                      <option value="No">No</option>
+                      <option value="Si">Si</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Lubricación de partes mecánicas</td>
+                  <td>
+                    <select
+                      id="lubricacion_efectuado"
+                      name="lubricacion_efectuado"
+                    >
+                      <option value="N/A" selected>N/A</option>
+                      <option value="Si">Si</option>
+                      <option value="No">No</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select id="lubricacion_paso" name="lubricacion_paso">
+                      <option value="N/A" selected>N/A</option>
+                      <option value="No">No</option>
+                      <option value="Si">Si</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Prueba de fugas</td>
+                  <td>
+                    <select
+                      id="prueba_fugas_efectuado"
+                      name="prueba_fugas_efectuado"
+                    >
+                      <option value="N/A" selected>N/A</option>
+                      <option value="Si">Si</option>
+                      <option value="No">No</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select id="prueba_fugas_paso" name="prueba_fugas_paso">
+                      <option value="N/A" selected>N/A</option>
+                      <option value="No">No</option>
+                      <option value="Si">Si</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Validación de parámetros de operación</td>
+                  <td>
+                    <select
+                      id="validacion_parametros_efectuado"
+                      name="validacion_parametros_efectuado"
+                    >
+                      <option value="N/A" selected>N/A</option>
+                      <option value="Si">Si</option>
+                      <option value="No">No</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select
+                      id="validacion_parametros_paso"
+                      name="validacion_parametros_paso"
+                    >
+                      <option value="N/A" selected>N/A</option>
+                      <option value="No">No</option>
+                      <option value="Si">Si</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Revisión del sistema de control de temperatura</td>
+                  <td>
+                    <select
+                      id="revision_control_temp_efectuado"
+                      name="revision_control_temp_efectuado"
+                    >
+                      <option value="N/A" selected>N/A</option>
+                      <option value="Si">Si</option>
+                      <option value="No">No</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select
+                      id="revision_control_temp_paso"
+                      name="revision_control_temp_paso"
+                    >
+                      <option value="N/A" selected>N/A</option>
+                      <option value="No">No</option>
+                      <option value="Si">Si</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Limpieza de contactos</td>
+                  <td>
+                    <select
+                      id="limpieza_contactos_efectuado"
+                      name="limpieza_contactos_efectuado"
+                    >
+                      <option value="N/A" selected>N/A</option>
+                      <option value="Si">Si</option>
+                      <option value="No">No</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select
+                      id="limpieza_contactos_paso"
+                      name="limpieza_contactos_paso"
+                    >
+                      <option value="N/A" selected>N/A</option>
+                      <option value="No">No</option>
+                      <option value="Si">Si</option>
+                    </select>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Revisión sistema eléctrico y/o eléctronicos</td>
+                  <td>
+                    <select
+                      id="revision_sistema_electrico_efectuado"
+                      name="revision_sistema_electrico_efectuado"
+                    >
+                      <option value="N/A" selected>N/A</option>
+                      <option value="Si">Si</option>
+                      <option value="No">No</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select
+                      id="revision_sistema_electrico_paso"
+                      name="revision_sistema_electrico_paso"
+                    >
+                      <option value="N/A" selected>N/A</option>
+                      <option value="No">No</option>
+                      <option value="Si">Si</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Revisión del sistema mecánico</td>
+                  <td>
+                    <select
+                      id="revision_sistema_mecanico_efectuado"
+                      name="revision_sistema_mecanico_efectuado"
+                    >
+                      <option value="N/A" selected>N/A</option>
+                      <option value="Si">Si</option>
+                      <option value="No">No</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select
+                      id="revision_sistema_mecanico_paso"
+                      name="revision_sistema_mecanico_paso"
+                    >
+                      <option value="N/A" selected>N/A</option>
+                      <option value="No">No</option>
+                      <option value="Si">Si</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Verificación del estado de las baterías</td>
+                  <td>
+                    <select
+                      id="verificacion_baterias_efectuado"
+                      name="verificacion_baterias_efectuado"
+                    >
+                      <option value="N/A" selected>N/A</option>
+                      <option value="Si">Si</option>
+                      <option value="No">No</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select
+                      id="verificacion_baterias_paso"
+                      name="verificacion_baterias_paso"
+                    >
+                      <option value="N/A" selected>N/A</option>
+                      <option value="No">No</option>
+                      <option value="Si">Si</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Verificación de lámparas o bombillos</td>
+                  <td>
+                    <select
+                      id="verificacion_lamparas_efectuado"
+                      name="verificacion_lamparas_efectuado"
+                    >
+                      <option value="N/A" selected>N/A</option>
+                      <option value="Si">Si</option>
+                      <option value="No">No</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select
+                      id="verificacion_lamparas_paso"
+                      name="verificacion_lamparas_paso"
+                    >
+                      <option value="N/A" selected>N/A</option>
+                      <option value="No">No</option>
+                      <option value="Si">Si</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Verificación del estado de los accesorios</td>
+                  <td>
+                    <select
+                      id="verificacion_accesorios_efectuado"
+                      name="verificacion_accesorios_efectuado"
+                    >
+                      <option value="N/A" selected>N/A</option>
+                      <option value="Si">Si</option>
+                      <option value="No">No</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select
+                      id="verificacion_accesorios_paso"
+                      name="verificacion_accesorios_paso"
+                    >
+                      <option value="N/A" selected>N/A</option>
+                      <option value="No">No</option>
+                      <option value="Si">Si</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Verificación del funcionamiento de las alarmas</td>
+                  <td>
+                    <select
+                      id="funcionamiento_alarmas_efectuado"
+                      name="funcionamiento_alarmas_efectuado"
+                    >
+                      <option value="N/A" selected>N/A</option>
+                      <option value="Si">Si</option>
+                      <option value="No">No</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select
+                      id="funcionamiento_alarmas_paso"
+                      name="funcionamiento_alarmas_paso"
+                    >
+                      <option value="N/A" selected>N/A</option>
+                      <option value="No">No</option>
+                      <option value="Si">Si</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Ajuste de parámetros</td>
+                  <td>
+                    <select
+                      id="ajuste_parametros_efectuado"
+                      name="ajuste_parametros_efectuado"
+                    >
+                      <option value="N/A" selected>N/A</option>
+                      <option value="Si">Si</option>
+                      <option value="No">No</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select
+                      id="ajuste_parametros_paso"
+                      name="ajuste_parametros_paso"
+                    >
+                      <option value="N/A" selected>N/A</option>
+                      <option value="No">No</option>
+                      <option value="Si">Si</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Verificación de los diversos modos de funcionamiento</td>
+                  <td>
+                    <select
+                      id="verificacion_modos_funcionamiento_efectuado"
+                      name="verificacion_modos_funcionamiento_efectuado"
+                    >
+                      <option value="N/A" selected>N/A</option>
+                      <option value="Si">Si</option>
+                      <option value="No">No</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select
+                      id="verificacion_modos_funcionamiento_paso"
+                      name="verificacion_modos_funcionamiento_paso"
+                    >
+                      <option value="N/A" selected>N/A</option>
+                      <option value="No">No</option>
+                      <option value="Si">Si</option>
+                    </select>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="parts-form">
+              <h3>Repuestos y/o accesorios</h3>
+              <table style="width: 100%">
+                <tr>
+                  <th>Cantidad</th>
+                  <th>Descripción</th>
+                </tr>
+                <tr>
+                  <td>
+                    <input
+                      type="text"
+                      id="repuesto_cantidad"
+                      name="repuesto_cantidad"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      id="repuesto_descripcion"
+                      name="repuesto_descripcion"
+                    />
+                  </td>
+                </tr>
+              </table>
+              <label for="observaciones">Observaciones:</label>
+              <textarea id="observaciones" name="observaciones"></textarea>
+            </div>
+            <div class="form-section">
+              <label for="entregado">Mantenimiento entregado por:</label>
+              <input type="text" id="entregado" name="entregado" />
+              <label for="cargo_entregado">Cargo:</label>
+              <input type="text" id="cargo_entregado" name="cargo_entregado" />
+              <label for="firma_entregado">Firma:</label>
+              <input type="text" id="firma_entregado" name="firma_entregado" />
+            </div>
+            <div class="form-section">
+              <label for="recibido">Recibido por:</label>
+              <input type="text" id="recibido" name="recibido" />
+              <label for="cargo_recibido">Cargo:</label>
+              <input type="text" id="cargo_recibido" name="cargo_recibido" />
+              <label for="firma_recibido">Firma:</label>
+              <input type="text" id="firma_recibido" name="firma_recibido" />
+            </div>
+          </div>
+          <div style="display: flex; justify-content: center">
+            <button type="submit" class="btn">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
